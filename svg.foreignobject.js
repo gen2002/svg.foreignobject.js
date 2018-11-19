@@ -18,6 +18,19 @@ SVG.extend(SVG.ForiegnObject, {
   },
   getChild: function (index) {
     return this.node.childNodes[index]
+  },
+  removeChild: function(index){
+    return this.node.removeChild(getChild(index));
+    
+  },
+  getChildElement: function(index) {
+      var el=this.node.firstElementChild;
+      idx = index;
+      while (idx > 0 && el ){
+          el = this.node.nextElementSibling;
+          idx -- ;
+      }
+      return el;
   }
 })
 
